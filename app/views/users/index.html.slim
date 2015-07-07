@@ -13,6 +13,8 @@ table
         | Name
       th
         | Surname
+      th
+        | Watchbug ID
       th[colspan="3"]
   tbody
     - @users.each do |user|
@@ -25,6 +27,8 @@ table
           = user.name
         td
           = user.surname
+        td
+          = user.watchbug_id
         td
           = link_to 'Show', user
         td

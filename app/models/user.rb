@@ -1,6 +1,9 @@
-
+require 'bcrypt'
 class User < ActiveRecord::Base
-  before_create do
-    self.password = Digest::SHA2.hexdigest(self.password)
-  end
+  #
+  # def authenticate password
+  #   super.authenticate(Digest::SHA2.hexdigest(password))
+  # end
+  has_secure_password
+
 end
