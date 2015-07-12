@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-
-  devise_for :users
+  devise_scope :user do
+    get 'users/onboard', to: 'users#onboard', as: 'onboard'
+  end
+  devise_for :users, :controllers => { :registrations => 'users' }
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

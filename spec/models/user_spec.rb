@@ -49,12 +49,6 @@ RSpec.describe User, type: :model do
 
     context 'username' do
 
-      it 'is mandatory' do
-        user = User.new
-        user.validate
-        expect(user.errors[:username]).to include('can\'t be blank')
-      end
-
       it 'must be 4 char minimum' do
         user = User.new(username: '123')
         user.validate
