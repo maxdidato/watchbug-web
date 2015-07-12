@@ -1,10 +1,10 @@
-Feature: User Managent
+Feature: User Management
 
   Scenario: New User Registration
-    Given I navigate to '/users/new'
-    And I set 'myemail@domain.com' as 'Email'
+    Given I navigate to '/users/sign_up'
+    And I set 'my_email@domain.com' as 'Email'
     And I set 'whatever' as 'Password'
-    And I set 'Massimiliano' as 'First name'
-    And I set 'Di Dato' as 'Surname'
-    When I click 'Register'
-    Then I should see 'User was successfully created.'
+    And I set 'whatever' as 'Password confirmation'
+    And I set 'my_username' as 'Username'
+    When I click 'Sign up'
+    Then I should see 'Welcome! You have signed up successfully.'

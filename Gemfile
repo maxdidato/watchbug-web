@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
 gem 'bcrypt'
+gem 'devise'
+gem 'validates_email_format_of'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -39,6 +41,7 @@ group :development, :test do
   gem 'byebug'
 
   gem 'cucumber-rails', require:false
+  gem 'database_cleaner'
   gem 'capybara'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
