@@ -15,6 +15,6 @@ Feature: User Management
       And I set 'username' as 'Username'
       And I set 'Max' as 'First name'
       And I set 'Max' as 'Surname'
-      And I set 'My Id' as 'Watchbug id'
+      And I set 'My Id' as 'Watchbug'
       When I click 'Complete Registration'
       Then I should see 'Registration completed'
