@@ -6,6 +6,11 @@ gem 'rails', '4.2.2'
 gem 'bcrypt'
 gem 'devise'
 gem 'validates_email_format_of'
+
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

@@ -3,7 +3,7 @@ Given(/^I navigate to '(.*)'$/) do |url|
 end
 
 When(/^I click '(.*)'$/) do |button|
-  click_button button
+  click_on button
 end
 
 And(/^I signed in$/) do

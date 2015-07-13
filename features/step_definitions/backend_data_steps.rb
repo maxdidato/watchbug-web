@@ -5,3 +5,8 @@ end
 But(/^I have not completed my onbording yet$/) do
   User.all.last.update(onboarded:false)
 end
+
+
+And(/^I have completed my onbording/) do
+  User.all.last.update(onboarded:true)
+end

@@ -17,4 +17,5 @@ Feature: User Management
       And I set 'Max' as 'Surname'
       And I set 'My Id' as 'Watchbug'
       When I click 'Complete Registration'
-      Then I should see 'Registration completed'
+      Then I should see 'HELLO Max'
+
