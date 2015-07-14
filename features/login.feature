@@ -1,12 +1,13 @@
 Feature: User Login
 
-  Scenario: Registered user login
+  Scenario: Login existing user
     Given I have registered using 'email@domain.com' as username and 'password' as password
+    And I have completed my onbording
     When I navigate to '/users/sign_in'
     And I set 'email@domain.com' as 'Email'
     And I set 'password' as 'Password'
     And I click 'Log in'
-    Then I should see 'Give us more information'
+    Then I should see 'Hello'
 
 
   Scenario: Logout
