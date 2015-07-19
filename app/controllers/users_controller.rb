@@ -1,3 +1,4 @@
+require 'httparty'
 class UsersController < Devise::RegistrationsController
   prepend_before_filter :authenticate_scope!, only: [:onboard]
 
