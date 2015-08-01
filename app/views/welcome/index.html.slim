@@ -5,10 +5,12 @@ h1 WELCOME TO WATCHBUG
 .ul
   - if user_signed_in?
     .il
-      = link_to('Log out', destroy_user_session_path, method: :delete)
+      = link_to('Log out', destroy_user_session_path, method: :delete,class:%w(btn btn-primary btn-lg))
+    .il
+      = link_to('Current location', geolocation_path,class:%w(btn btn-primary btn-lg))
   - else
     .il
-      = link_to('Log in', new_user_session_path)
+      = link_to('Log in', new_user_session_path,class:%w(btn btn-primary btn-lg))
     .il
-      = link_to('Sign up', new_user_registration_path)
+      = link_to('Sign up', new_user_registration_path,class:%w(btn btn-primary btn-lg))
 

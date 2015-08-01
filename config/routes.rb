@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
   devise_for :users, :controllers => { :registrations => 'users' }
 
-  get 'geolocations/:id', to:'geolocations#show'
+  resource :geolocation, only:[:show]
 
   root 'welcome#index'
 
