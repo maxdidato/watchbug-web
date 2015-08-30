@@ -1,7 +1,7 @@
 Feature: User Login
 
   Scenario: Login existing user
-    Given I have registered using 'email@domain.com' as username and 'password' as password
+    Given I have registered using 'email@domain.com' as email and 'password' as password
     And I have completed my onbording
     When I navigate to '/users/sign_in'
     And I set 'email@domain.com' as 'Email'
@@ -11,7 +11,7 @@ Feature: User Login
 
 
   Scenario: Logout
-    Given I have registered using 'email@domain.com' as username and 'password' as password
+    Given I have registered using 'email@domain.com' as email and 'password' as password
     And I have completed my onbording
     And I signed in
     When I click 'Log out'
