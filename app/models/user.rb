@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
 
   def geolocation
     response=HTTParty.get("#{Settings.watchbug_api}/geolocations/#{watchbug_id}").body
-    JSON.parse(response)
+    JSON.parse(response,symbolize_names:true)
   end
 end

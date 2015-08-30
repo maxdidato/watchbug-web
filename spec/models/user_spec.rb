@@ -64,4 +64,16 @@ RSpec.describe User, type: :model do
 
   end
 
+  context '#gelocation' do
+
+    it 'ask the geolocation for the user to the api server and returns the body' do
+      user = build(:user)
+      response = {lat: 'lat', long: 'long', battery: 'battery'}
+      stub_request(:get,"#{Settings.watchbug_api}/geolocations/#{user.watchbug_id}").to_return(
+          body:response.to_json)
+      expect(user.geolocation).to eq(response)
+    end
+
+  end
+
 end

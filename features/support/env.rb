@@ -1,6 +1,8 @@
+$LOAD_PATH.unshift(File.expand_path("../../helpers/test",File.dirname(__FILE__)))
 require 'capybara/cucumber'
 require 'database_cleaner'
 require 'factory_girl'
+require 'factories'
 require 'webmock/cucumber'
 ENV["RAILS_ENV"] ||= 'test'
 WebMock.disable_net_connect!(:allow_localhost => true)
