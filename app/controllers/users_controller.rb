@@ -4,7 +4,7 @@ class UsersController < Devise::RegistrationsController
 
 
   def onboard
-    resource.onboarded? ? render(root_path) : render('onboard')
+    current_user.onboarded? ? redirect_to(root_path) : render('onboard')
   end
 
   protected
