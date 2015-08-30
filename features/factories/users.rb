@@ -11,4 +11,4 @@ FactoryGirl.define do
   end
 
 end
-FactoryGirl.lint
+

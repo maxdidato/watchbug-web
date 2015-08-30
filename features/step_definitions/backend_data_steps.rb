@@ -13,13 +13,13 @@ end
 
 
 And(/^the last known position for my device is lat:'(.*)' and long:'(.*)'$/) do |lat, long|
-  stub_request(:get, "http://watchbug-api.herokuapp.com/geolocations/#{build(:user).watchbug_id}").
+  stub_request(:get, "#{Settings.watchbug_api}/geolocations/#{build(:user).watchbug_id}").
       to_return(:body => {lat: lat, long: long}.to_json)
   stub_request(:get, "http://maps.google.com").to_return(body: 'MAP')
 end
 
 And(/^the battery level is '(.*)'$/) do |battery_level|
-  stub_request(:get, "http://watchbug-api.herokuapp.com/geolocations/#{build(:user).watchbug_id}").
+  stub_request(:get, "#{Settings.watchbug_api}/geolocations/#{build(:user).watchbug_id}").
       to_return(:body => {battery: battery_level}.to_json)
   stub_request(:get, "http://maps.google.com").to_return(body: 'MAP')
 end
