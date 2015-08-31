@@ -24,7 +24,7 @@ RSpec.describe GeolocationsController, type: :controller do
       it 'gets the geolocation and battery and  set the appropriate instance variables' do
         allow(subject.current_user).to receive(:geolocation).and_return(lat: latitude,long:longitude,battery:battery)
         get :show
-        expect(assigns(:link)).to eq("http://maps.google.com/maps?q=#{latitude},#{longitude}&z=16&output=embed")
+        expect(assigns(:link)).to eq("https://maps.google.com/maps?q=#{latitude},#{longitude}&z=16&output=embed")
         expect(assigns(:battery)).to eq(battery)
       end
     end
