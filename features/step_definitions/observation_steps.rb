@@ -12,3 +12,12 @@ end
 Then(/^I should see the battery level set to '(.*)'$/) do |battery_level|
   expect(page).to have_content battery_level
 end
+
+Then(/^I should see a popup saying "(.*)"$/) do |message|
+  expect(page.driver.browser.switch_to.alert.text).to eq(message)
+end
+
+
+Then(/^I should not see a popup$/) do
+ expect{page.driver.browser.switch_to.alert}.to raise_error(Selenium::WebDriver::Error::NoAlertPresentError)
+end

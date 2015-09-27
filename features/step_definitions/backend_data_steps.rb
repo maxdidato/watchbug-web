@@ -23,3 +23,9 @@ And(/^the battery level is '(.*)'$/) do |battery_level|
       to_return(:body => {battery: battery_level}.to_json)
   stub_request(:get, "http://maps.google.com").to_return(body: 'MAP')
 end
+
+When(/^an alarm is generated for (my|another) watchbug id$/) do |person|
+  watchbug_id = @user.watchbug_id
+  watchbug_id = watchbug_id.to_i+1 if (person=='another')
+  post("/alarms/"+watchbug_id.to_s)
+end

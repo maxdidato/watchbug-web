@@ -15,10 +15,10 @@ end
 
 Given(/^I have logged in$/) do
   FactoryGirl.lint
-  user = build(:user)
+  @user = build(:user)
   visit('/users/sign_in')
-  fill_in 'Email', with: user.email
-  fill_in 'Password', with: user.password
+  fill_in 'Email', with: @user.email
+  fill_in 'Password', with: @user.password
   click_button 'Log in'
 
 end

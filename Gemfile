@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#ruby-gemset=watchbug_web
+
+
 ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -38,6 +41,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'slim-rails'
+gem 'websocket-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

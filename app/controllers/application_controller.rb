@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def after_sign_in_path_for(resource)
+    cookies[:watchbug_id] = resource.watchbug_id || 0
    resource.onboarded? ? super : onboard_path
   end
 
