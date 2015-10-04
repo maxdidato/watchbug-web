@@ -16,7 +16,7 @@ RSpec.describe ProtectionModesController, type: :controller do
     context 'when the user is authenticated' do
       let(:user) { create(:user) }
       before do
-        stub_request(:put, "#{Settings.watchbug_api}/#{user.watchbug_id}/request")
+        stub_request(:put, "#{Settings.watchbug_api}/requests/#{user.watchbug_id}")
             .with(body: {type: 'protection_mode',action:'on'}.to_json).to_return(status: status_code)
         sign_in user
       end
