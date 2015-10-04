@@ -17,7 +17,7 @@ RSpec.describe ProtectionModesController, type: :controller do
       let(:user) { create(:user) }
       before do
         stub_request(:put, "#{Settings.watchbug_api}/#{user.watchbug_id}/request")
-            .with(body: {type: 'protection_mode'}.to_json).to_return(status: status_code)
+            .with(body: {type: 'protection_mode',action:'on'}.to_json).to_return(status: status_code)
         sign_in user
       end
 
