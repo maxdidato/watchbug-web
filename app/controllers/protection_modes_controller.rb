@@ -3,7 +3,7 @@ class ProtectionModesController < ApplicationController
 
   def update
     response = HTTParty.put(Settings.watchbug_api+"/"+current_user.watchbug_id+"/request", body: {type: 'protection_mode'}.to_json, headers: {'Content-Type': 'application/json'})
-    if response.code == 201
+    if response.code == 204
       flash[:notice] = 'Request sent'
     else
       flash[:alert] = 'Something went wrong'

@@ -32,5 +32,5 @@ end
 
 And(/^the api server(| does not) accept(|s) the protection mode request$/) do |accepts,_|
   stub_request(:put, "#{Settings.watchbug_api}/#{@user.watchbug_id}/request")
-      .with(body:{type:'protection_mode'}.to_json).to_return(status: accepts.empty? ? 201 : 401)
+      .with(body:{type:'protection_mode'}.to_json).to_return(status: accepts.empty? ? 204 : 401)
 end

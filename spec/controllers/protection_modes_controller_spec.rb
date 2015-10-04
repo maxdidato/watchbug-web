@@ -22,7 +22,7 @@ RSpec.describe ProtectionModesController, type: :controller do
       end
 
       context 'when the api server accepts the request' do
-        let(:status_code) { 201 }
+        let(:status_code) { 204 }
         it 'set a flash notice and redirects to root' do
           put :update
           expect(response).to redirect_to(root_path)
