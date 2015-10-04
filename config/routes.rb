@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'users' }
 
   resource :geolocation, only:[:show]
-  resource :protection_mode, only:[:create]
+  resource :protection_mode, only:[:update]
 
   root 'welcome#index'
 

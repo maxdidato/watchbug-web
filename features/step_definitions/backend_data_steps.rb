@@ -31,6 +31,6 @@ When(/^an alarm is generated for (my|another) watchbug id$/) do |person|
 end
 
 And(/^the api server(| does not) accept(|s) the protection mode request$/) do |accepts,_|
-  stub_request(:post, "#{Settings.watchbug_api}/#{@user.watchbug_id}/request")
+  stub_request(:put, "#{Settings.watchbug_api}/#{@user.watchbug_id}/request")
       .with(body:{type:'protection_mode'}.to_json).to_return(status: accepts.empty? ? 201 : 401)
 end

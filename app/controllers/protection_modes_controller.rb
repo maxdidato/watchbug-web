@@ -1,8 +1,8 @@
 class ProtectionModesController < ApplicationController
   before_action :authenticate_user!
 
-  def create
-    response = HTTParty.post(Settings.watchbug_api+"/"+current_user.watchbug_id+"/request", body: {type: 'protection_mode'}.to_json, headers: {'Content-Type': 'application/json'})
+  def update
+    response = HTTParty.put(Settings.watchbug_api+"/"+current_user.watchbug_id+"/request", body: {type: 'protection_mode'}.to_json, headers: {'Content-Type': 'application/json'})
     if response.code == 201
       flash[:notice] = 'Request sent'
     else

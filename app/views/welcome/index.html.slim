@@ -9,7 +9,7 @@ h1 WELCOME TO WATCHBUG
     .il
       = link_to('Current location', geolocation_path,class:%w(btn btn-primary btn-lg))
     .il
-      = link_to('Protection Mode',protection_mode_path, method: :post, class: %w(btn btn-primary btn-lg))
+      = link_to('Protection Mode',protection_mode_path, method: :put, class: %w(btn btn-primary btn-lg))
   - else
     .il
       = link_to('Log in', new_user_session_path,class:%w(btn btn-primary btn-lg))
