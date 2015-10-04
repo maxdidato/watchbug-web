@@ -12,3 +12,16 @@ Feature: Alarms
     When an alarm is generated for another watchbug id
     Then I should not see a popup
 
+
+  Scenario: Engage protection mode
+    Given I have logged in
+    And the api server accepts the protection mode request
+    When I click 'Protection Mode'
+    Then I should see 'Request sent'
+
+  Scenario: Error while engaging protection mode
+    Given I have logged in
+    And the api server does not accept the protection mode request
+    When I click 'Protection Mode'
+    Then I should see 'Something went wrong'
+
